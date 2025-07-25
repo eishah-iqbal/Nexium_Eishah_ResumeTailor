@@ -2,21 +2,24 @@ import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(req: NextRequest) {
   try {
-    const resume = await req.json();
-    console.log('Incoming resume:', resume);
+    const { jobDescription } = await req.json();
 
-    const response = await fetch('https://eishah-malik.app.n8n.cloud/webhook/resume-test', {
+    const response = await fetch('https://eishah-malik.app.n8n.cloud/webhook/resume-tailor', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(resume),
+      body: JSON.stringify({ jobDescription })
     });
 
-    const rawText = await response.text();
-    console.log('n8n Raw Response:', rawText);
+    // Try parsing JSON safely
+    const data = await response.json();
 
-    return NextResponse.json({ message: 'Sent to n8n', result: rawText });
+    return NextResponse.json(data);
+
   } catch (error: any) {
     console.error('API Error:', error.message || error);
-    return NextResponse.json({ error: 'Failed to send to n8n', details: error.message || error }, { status: 500 });
+    return NextResponse.json(
+      { error: 'Failed to send to n8n', details: error.message || error },
+      { status: 500 }
+    );
   }
 }

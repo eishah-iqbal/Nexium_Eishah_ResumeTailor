@@ -12,16 +12,43 @@ export default function ResumeEditorPage() {
   const [jobDescription, setJobDescription] = useState("")
   const [error, setError] = useState("")
 
-  const handleGenerateResume = () => {
-    if (!jobDescription.trim()) {
-      setError("Please enter a job description before proceeding.")
-      toast.error("Job description is required.")
-      return
-    }
-
-    setError("") // Clear error if input is valid
-    router.push("/resume")
+  const handleGenerateResume = async () => {
+  if (!jobDescription.trim()) {
+    toast.error("Job description is required.")
+    return
   }
+
+  setError("")
+  const toastId = toast.loading("Generating resume...")
+
+  try {
+    const res = await fetch("/api/send-to-n8n", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ jobDescription }),
+    })
+
+    const data = await res.json()
+
+    toast.dismiss(toastId)
+
+    if (res.ok) {
+      toast.success("Resume generated!")
+      console.log("n8n response:", data)
+
+      // Store response in localStorage or route with params
+      localStorage.setItem("resumeText", data.resume)
+      router.push("/resume")
+    } else {
+      toast.error(data.message || "Something went wrong.")
+    }
+  } catch (err) {
+    console.error(err)
+    toast.dismiss(toastId)
+    toast.error("Failed to generate resume.")
+  }
+}
+
 
   return (
     <div 

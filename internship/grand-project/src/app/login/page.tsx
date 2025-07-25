@@ -6,14 +6,42 @@ import { Card, CardContent } from '@/components/ui/card'
 import Link from 'next/link'
 import { useState } from 'react'
 import { toast } from 'sonner'
+import supabase from '@/lib/supabase'
 
 export default function LoginPage() {
   const [email, setEmail] = useState('')
 
-   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    toast.success(`Magic link sent to ${email}. Please check your email!`)
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  // 1. Check if email exists in profiles table
+  const { data, error: selectError } = await supabase
+    .from('profiles')
+    .select('id')
+    .eq('email', email)
+    .single();
+
+  if (selectError || !data) {
+    toast.error('No account found for this email. Please sign up first.');
+    return;
   }
+
+  // 2. If found, send login magic link
+  const { error: authError } = await supabase.auth.signInWithOtp({
+    email,
+    options: {
+      shouldCreateUser: false,
+      emailRedirectTo: `${window.location.origin}/dashboard`,
+    },
+  });
+
+  if (authError) {
+    toast.error(authError.message);
+  } else {
+    toast.success(`Magic link sent to ${email}. Please check your email!`);
+  }
+};
+
 
   return (
     <div
