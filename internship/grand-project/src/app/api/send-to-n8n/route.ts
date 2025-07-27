@@ -15,10 +15,11 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json(data);
 
-  } catch (error: any) {
-    console.error('API Error:', error.message || error);
+  } catch (error) {
+    const err = error as Error;
+    console.error('API Error:', err.message || err);
     return NextResponse.json(
-      { error: 'Failed to send to n8n', details: error.message || error },
+      { error: 'Failed to send to n8n', details: err.message || err },
       { status: 500 }
     );
   }

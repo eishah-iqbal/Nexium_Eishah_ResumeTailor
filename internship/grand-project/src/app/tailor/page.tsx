@@ -90,7 +90,7 @@ export default function ResumeTailorPage() {
       <main className="flex flex-col items-center flex-1 justify-center w-full px-4">
         <div className="w-full max-w-xl space-y-4">
           <Label htmlFor="instruction" className="text-base sm:text-lg">
-            Describe the changes you'd like to make:
+            Describe the changes you want to make:
           </Label>
           <Textarea
             id="instruction"
