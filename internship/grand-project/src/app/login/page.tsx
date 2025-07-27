@@ -45,7 +45,7 @@ export default function LoginPage() {
 
   return (
     <div
-      className="min-h-screen flex flex-col items-center justify-center px-4 text-white"
+      className="min-h-screen flex flex-col px-4 text-white"
       style={{
         backgroundColor: '#0a0a12',
         backgroundImage: `
@@ -55,7 +55,7 @@ export default function LoginPage() {
         backgroundAttachment: 'fixed'
       }}
     >
-       <header className="absolute top-4 left-4 text-2xl font-bold text-white drop-shadow-[0_0_6px_rgba(138,43,226,0.7)]">
+       <header className="absolute top-4 left-4 text-2xl sm:text-3xl font-sans font-bold text-white drop-shadow-[0_0_6px_rgba(138,43,226,0.7)]">
         CV Crafter
       </header>
 
@@ -68,7 +68,7 @@ export default function LoginPage() {
         </Button>
       </Link>
 
-
+     <div className="flex-grow flex items-center justify-center">
       <Card className="w-full max-w-lg border border-violet-600 rounded-2xl bg-[rgba(137,43,226,0.1)] backdrop-blur-xl shadow-[0_0_20px_rgba(138,43,226,0.5)] ring-1 ring-violet-500">
         <CardContent className="p-6 space-y-4">
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -82,13 +82,13 @@ export default function LoginPage() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-           className="bg-transparent border border-violet-500 focus:ring-violet-400 text-white"
+           className="mb-8 bg-transparent border border-violet-500 focus:ring-violet-400 text-white"
           />
           </div>
           <div className="flex justify-center">
             <Button
               type="submit"
-              className="mx-auto mt-4 px-10 bg-violet-900 hover:bg-violet-700 text-white shadow-md"
+              className="w-full sm:w-auto px-6 sm:px-10 bg-violet-900 hover:bg-violet-700 text-white shadow-md"
             >
               Get Magic Link
             </Button>
@@ -96,8 +96,9 @@ export default function LoginPage() {
         </form>
        </CardContent>
       </Card>
+      </div>
 
-      <footer className="absolute bottom-4 text-gray-400 text-xs">
+      <footer className="text-gray-400 text-xs text-center py-6">
         © 2025 CV Crafter
       </footer>
     </div>

@@ -104,7 +104,7 @@ export default function DashboardPage() {
         backgroundAttachment: 'fixed'
       }}
     >
-      <header className="absolute top-4 left-4 text-2xl font-bold text-white drop-shadow-[0_0_6px_rgba(138,43,226,0.7)]">
+      <header className="absolute top-4 left-4 text-2xl sm:text-3xl font-sans font-bold text-white drop-shadow-[0_0_6px_rgba(138,43,226,0.7)]">
         CV Crafter
       </header>
 
@@ -112,7 +112,7 @@ export default function DashboardPage() {
         Welcome <span className="italic">{userName || 'there'}</span>!
       </h1>
 
-      <div className="text-center max-w-5/6 text-white text-lg p-4 my-4">
+      <div className="text-center max-w-5/6 text-white text-base sm:text-lg p-4 my-4">
         <p>
           <strong>CV Crafter</strong> helps job seekers create and personalize
           resumes that match specific job descriptions. You can either start
@@ -125,7 +125,7 @@ export default function DashboardPage() {
         <div className="text-center flex-1">
           <p className="mb-2 text-accent">Create new resume:</p>
           <Link href="/editor">
-            <Button className="mx-auto mt-4 px-20 bg-violet-900 hover:bg-violet-700 text-white shadow-md">
+            <Button className="mx-auto mt-4 px-8 sm:px-20 w-full sm:w-auto bg-violet-900 hover:bg-violet-700 text-white shadow-md">
               Create Resume
             </Button>
           </Link>
@@ -135,7 +135,7 @@ export default function DashboardPage() {
           <p className="mb-2 text-accent">Tailor your resume:</p>
           <Button
             onClick={handleUploadClick}
-            className="mx-auto mt-4 px-20 bg-violet-900 hover:bg-violet-700 text-white shadow-md"
+            className="mx-auto mt-4 px-8 sm:px-20 w-full sm:w-auto bg-violet-900 hover:bg-violet-700 text-white shadow-md"
           >
             Upload Resume
           </Button>
@@ -149,7 +149,7 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      <footer className="absolute bottom-4 text-gray-400 text-xs">
+      <footer className="mt-30 text-gray-400 text-xs text-center">
         © 2025 CV Crafter
       </footer>
     </div>

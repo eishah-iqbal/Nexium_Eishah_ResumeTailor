@@ -64,7 +64,7 @@ export default function ResumePage() {
         backgroundAttachment: 'fixed'
       }}
     >
-      <header className="mt-4 mb-4 ml-4 text-2xl font-bold text-white drop-shadow-[0_0_6px_rgba(138,43,226,0.7)]">
+      <header className="mt-4 mb-4 ml-4 text-2xl sm:text-3xl font-sans font-bold text-white drop-shadow-[0_0_6px_rgba(138,43,226,0.7)]">
         CV Crafter
       </header>
 
@@ -79,15 +79,15 @@ export default function ResumePage() {
 
 
       <div className="flex-grow flex flex-col items-center justify-center w-full px-4">
-        <Card className="w-full max-w-3xl min-h-[400px] shadow-md mb-6 bg-[rgba(137,43,226,0.1)] border border-violet-600 overflow-auto">
-          <CardContent className="p-6 text-sm whitespace-pre-wrap text-white">
+        <Card className="w-full max-w-3xl max-h-[70vh] shadow-md mb-6 bg-[rgba(137,43,226,0.1)] border border-violet-600 overflow-auto">
+          <CardContent className="p-4 sm:p-6 text-sm sm:text-base break-words whitespace-pre-wrap text-white">
             {resumeText || "Loading your resume..."}
           </CardContent>
         </Card>
 
         <Button 
           onClick={handleDownload}
-          className="mx-auto mt-4 mb-4 px-14 bg-violet-900 hover:bg-violet-700 text-white shadow-md"
+          className="mx-auto mt-4 mb-6 px-6 sm:px-14 bg-violet-900 hover:bg-violet-700 text-white shadow-md"
         >
           Download as PDF
         </Button>

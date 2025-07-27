@@ -62,19 +62,19 @@ export default function ResumeEditorPage() {
         backgroundAttachment: 'fixed'
       }}
     >
-      <header className="absolute top-4 left-4 text-2xl font-bold text-white drop-shadow-[0_0_6px_rgba(138,43,226,0.7)]">
+      <header className="absolute top-4 left-4 text-2xl sm:text-3xl font-sans font-bold text-white drop-shadow-[0_0_6px_rgba(138,43,226,0.7)]">
         CV Crafter
       </header>
 
       <main className="flex flex-col items-center flex-1 justify-center w-full px-4">
         <div className="w-full max-w-xl space-y-4">
-          <Label htmlFor="job-description" className="text-lg">
+          <Label htmlFor="job-description" className="text-base sm:text-lg">
             Job Description:
           </Label>
           <Textarea 
             id="job-description"
             placeholder="Enter the job description here..."
-            className="min-h-[160px] bg-transparent border border-violet-500 focus:ring-violet-400 text-white"
+            className="w-full min-h-[160px] bg-transparent border border-violet-500 focus:ring-violet-400 text-white"
             value={jobDescription}
             onChange={(e) => setJobDescription(e.target.value)}
           />
@@ -83,7 +83,7 @@ export default function ResumeEditorPage() {
 
           <div className="flex justify-center">
             <Button 
-              className="mx-auto mt-4 px-14 bg-violet-900 hover:bg-violet-700 text-white shadow-md" 
+              className="w-full sm:w-auto mt-4 px-6 sm:px-14 bg-violet-900 hover:bg-violet-700 text-white shadow-md" 
               onClick={handleGenerateResume}
             >
               Generate Resume
@@ -92,7 +92,7 @@ export default function ResumeEditorPage() {
         </div>
       </main>
 
-      <footer className="absolute bottom-4 text-gray-400 text-xs">
+      <footer className="mb-5 text-gray-400 text-xs text-center">
         © 2025 CV Crafter
       </footer>
     </div>
