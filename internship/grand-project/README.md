@@ -4,6 +4,7 @@ CV Crafter is an AI-powered web application that helps users generate or customi
 
 ## 📁 Project Structure
 
+```bash
 /internship/grand-project/
 │
 ├── /docs/ → PRD and wireframes
@@ -11,6 +12,7 @@ CV Crafter is an AI-powered web application that helps users generate or customi
 ├── /src/app/ → Frontend (Next.js 15 + ShadCN UI)
 ├── /src/lib/ → Supabase and MongoDB setup
 └── README.md → This file
+```
 
 ---
 
@@ -43,24 +45,31 @@ CV Crafter is an AI-powered web application that helps users generate or customi
 ```bash
 git clone https://github.com/YOUR-USERNAME/Nexium_Eishah_ResumeTailor.git
 cd Nexium_Eishah_ResumeTailor/internship/grand-project
+```
 
 ### 2. Install dependencies
 
+```bash
 pnpm install
+```
 
 ### 3. Set up environment variables
 
 Create a .env.local file using the provided .env.example and add:
 
+```bash
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
 MONGODB_URI=your_mongodb_connection_string
 N8N_RESUME_TAILOR_URL=https://n8n.<your-domain>.com/webhook/resume-tailor
 N8N_TAILOR_RESUME_URL=https://n8n.<your-domain>.com/webhook/tailor-resume
+```
 
 ### 4. Run the dev server
 
+```bash
 pnpm dev
+```
 App should be running at http://localhost:3000.
 
 --- 
@@ -89,7 +98,9 @@ Live Demo: https://nexium-eishah-resume-tailor.vercel.app/
 ## 🙋‍♀️ Author
 
 Eishah Iqbal Malik
-Full Stack intern at Nexium | Software Engineering Junior @ FAST-NUCES | https://www.linkedin.com/in/eishah-iqbal-02967a317/
+- Full Stack intern at Nexium
+- Software Engineering Junior @ FAST-NUCES
+- https://www.linkedin.com/in/eishah-iqbal-02967a317/
 
 ---
 
