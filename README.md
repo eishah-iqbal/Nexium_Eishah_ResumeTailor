@@ -21,7 +21,6 @@
 
 ## 📁 Folder Structure
 
-```bash
 /internship/grand-project/
 ├── /src/app/        # Frontend (Next.js)
 ├── /src/app/api/    # Backend logic, AI workflows and logic via n8n
@@ -35,10 +34,13 @@
 ```bash
 git clone https://github.com/YOUR-USERNAME/Nexium_Eishah_ResumeTailor.git
 cd Nexium_Eishah_ResumeTailor/internship/grand-project
+```
 
 ### 2. Install dependencies
 
+```bash
 pnpm install
+```
 
 ### 3. Set up .env.local
 
@@ -46,7 +48,9 @@ See the .env.example for required environment variables.
 
 ### 4. Run the app locally
 
+```bash
 pnpm dev
+```
 
 ## 🌐 Live Demo
 
