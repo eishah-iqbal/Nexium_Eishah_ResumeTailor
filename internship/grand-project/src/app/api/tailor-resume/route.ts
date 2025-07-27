@@ -78,12 +78,13 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ resume: tailoredResume })
 
-  } catch (error: any) {
+  } catch (error) {
+    const err = error as Error;
     console.error('=== TAILOR RESUME ERROR ===')
-    console.error('Error:', error.message || error)
-    console.error('Stack:', error.stack)
+    console.error('Error:', err.message || err)
+    console.error('Stack:', err.stack)
     return NextResponse.json(
-      { error: 'Failed to tailor resume', details: error.message || error },
+      { error: 'Failed to tailor resume', details: err.message || err },
       { status: 500 }
     )
   }
