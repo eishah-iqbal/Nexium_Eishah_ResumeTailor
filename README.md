@@ -21,11 +21,13 @@
 
 ## 📁 Folder Structure
 
+```bash
 /internship/grand-project/
 ├── /src/app/        # Frontend (Next.js)
 ├── /src/app/api/    # Backend logic, AI workflows and logic via n8n
 ├── /src/lib/        # Supabase and MongoDB setup
 └── /docs/           # PRD and wireframes
+```
 
 ## 📦 Installation & Setup
 
