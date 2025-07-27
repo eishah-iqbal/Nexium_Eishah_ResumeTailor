@@ -29,7 +29,7 @@ export async function POST(req: NextRequest) {
 
     // Send to n8n with better error handling
     console.log('Calling n8n webhook...')
-    const n8nRes = await fetch('https://eishah-malik.app.n8n.cloud/webhook/tailor-resume', {
+    const n8nRes = await fetch(process.env.N8N_TAILOR_RESUME_URL!, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ resumeText, jobDescription: instruction })
